@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -16,5 +17,23 @@
         ❤️ 点赞 <span id="count">0</span>
     </button>
 </div>
+<script>
+    // 1. 找到按钮和数字
+    const btn = document.getElementById('likeBtn');
+    const countSpan = document.getElementById('count');
+    let count = 0; // 初始点赞数
+
+    // 2. 监听点击事件
+    btn.addEventListener('click', function() {
+        count = count + 1;           // 数字加1
+        countSpan.innerText = count; // 更新屏幕上的数字
+        
+        // 这是一个彩蛋：根据点赞数变颜色
+        if (count > 5) {
+            btn.style.backgroundColor = "#f1c40f"; // 变金黄色
+            btn.innerText = "🏆 超级粉丝 " + count;
+        }
+    });
+</script>
 </body>
 </html>
